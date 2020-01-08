@@ -1,0 +1,144 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% ColdADC Testing Results
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+
+\topmargin=-0.5in
+\oddsidemargin=0in
+\evensidemargin=0in
+\textwidth=6.2in
+\textheight=9.25in
+
+\usepackage[dvips]{graphics}
+\usepackage{rotating}
+\usepackage{amssymb,amsmath}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{color}
+\usepackage[table]{xcolor}
+\usepackage{colortbl}
+\usepackage{enumerate}
+
+%% draftwatermark causes infinite loop on SL6's ancient TeXLive
+%\usepackage[firstpage]{draftwatermark}
+\usepackage{lipsum}
+\usepackage{tikz}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[blocks,affil-it]{authblk}
+
+\RequirePackage{lineno}
+
+\bibliographystyle{plain}
+\bibliographystyle{unsrt}
+
+\usepackage{graphicx, subfigure}
+\usepackage[colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black,bookmarks=true]{hyperref}
+
+\setcounter{tocdepth}{2}
+
+
+
+\begin{document}
+%\linenumbers
+
+\title{DUNE ColdADC ASIC Preliminary Testing Results}
+
+%\date{\today}
+\date{January 10, 2020}
+\author{Authors go here}
+%	\input{150606_authors}
+%	\input{authors_template}
+
+\maketitle
+
+\centerline{DUNE Electronics Consortium}
+
+%\SetWatermarkText{DRAFT}
+%\SetWatermarkLightness{0.8}
+%\SetWatermarkScale{5}
+
+
+\begin{abstract}
+Abstract
+\end{abstract}
+
+
+\newpage
+\tableofcontents
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction [{\color{red} Grace/Lin}] }
+%\section{Introduction}
+\input{sec.1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Test Setup}
+\input{sec.2}
+\subsection{Cryogenic Test System (CTS) [{\color{red} Lin}] }
+\input{sec.2.1}
+\subsection{BNL Test System [{\color{red} Gao}] }
+\input{sec.2.2}
+\subsection{Fermilab Cryo Cooler Test System [{\color{red} Christian}] }
+\input{sec.2.3}
+\subsection{LBNL Test Board  [{\color{red} Lin}] }
+\input{sec.2.4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Functional Testing [{\color{red} Christian}] }
+\input{sec.3}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Performance Results}
+
+\subsection{Noise}
+\subsubsection{ColdADC Only}
+\subsubsection{LArASIC + ColdADC  [{\color{red} Gao}] }
+
+\subsection{Static Linearity (INL,DNL)}
+
+\subsection{Dynamic Linearity (ENOB)}
+
+\subsection{Channel Crosstalk}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Issues Identified and Mitigations}
+
+\subsection{Autocal}
+\subsection{IR Drop}
+\subsection{Level Shifter}
+\subsection{ADC Core Linearity}
+\subsection{SHA/MUX Linearity}
+\subsection{SDC Linearity}
+\subsection{SHA/MUX Crosstalk}
+\subsection{BGR Op-amp}	
+\subsection{Reset Out-of-Sync Between Two ADC Pipelines}
+\subsection{Overflow Wraparound}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Production Testing   [{\color{red} Furic}] }
+\input{sec.6}
+
+\newpage
+\section{Summary}  
+%	\input{summary}
+
+\newpage
+%\input{bibliography}
+
+
+\newpage
+\section*{Appendix}
+%	\input{appendix}
+
+\end{document}
