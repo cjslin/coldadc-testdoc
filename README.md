@@ -6,13 +6,11 @@ To download the sources files:
   git clone http://github.com/cjslin/coldadc-testdoc.git
 
 
-============================
+
 To compile the Latex files:
-============================
-  make
-
+``` make
+```
 The 'make' command will generate coldadc-testdoc.pdf
-
 
 
 
