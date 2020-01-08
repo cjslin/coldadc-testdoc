@@ -8,7 +8,8 @@ To download the sources files:
 
 
 To compile the Latex files:
-``` make
+``` 
+make
 ```
 The 'make' command will generate coldadc-testdoc.pdf
 
