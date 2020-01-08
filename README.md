@@ -7,7 +7,7 @@ To download the sources files:
 
 
 
-There is a MakeFile for compiling the Latex files. Type:
+There is a Makefile for compiling the Latex files. Type:
 ``` 
 make
 ```
