@@ -17,7 +17,7 @@ The 'make' command will generate coldadc-testdoc.pdf
 
 ```git status``` will show the status of the files in your directory. You'll see the list of files that have been modified and also files that are "untracked".
 
-```git add <filename> ``` this command tags the new file to be added to the repository. You will need to issue the ```commit and push``` sequence for the new file to show up in the github master branch.
+```git add <filename> ``` this command tags the new ("untracked") file to be added to the repository. You will need to issue the ```commit and push``` sequence for the new file to show up in the github master branch.
 
 ```git rm <filename>``` will delete the file that you not longer want. The file will only be removed in github after you commit the changes.
 
