@@ -17,7 +17,7 @@ The 'make' command will generate coldadc-testdoc.pdf
 
 ```git status``` will show the status of the files in your directory. You'll see the list of files that have been modified and also files that are "untracked".
 
-```git add <filename> ``` will add the newly created file to github. The file will only be in your personal directory until you commit it.
+```git add <filename> ``` this command tags the new file to be added to the repository. You will need to issue the ```commit and push``` sequence for the new file to show up in the github master branch.
 
 ```git rm <filename>``` will delete the file that you not longer want. The file will only be removed in github after you commit the changes.
 
@@ -30,9 +30,9 @@ The 'make' command will generate coldadc-testdoc.pdf
 
 (2) ``` git add <filename>``` --> add any new tex files and figures that you want to commit
 
-(3) ``` git commit -a -m "Write a short note here about your commit" ``` --> this command only commits changes to your local repository
+(3) ``` git commit -a -m "Write a short note here about your commit" ``` --> this command only commits changes to your local repository.
 
-(4) ``` git pull``` --> now sync your local respository with other changes in the master branch.  You may need to resolve conflict if more than one people is working on the same file. This may happen for bibliography.tex since we all share the same file.
+(4) ``` git pull``` --> now sync your local respository with other changes in the master branch.  You may need to resolve conflict if more than one people is working on the same file. This may happen for bibliography.tex since we all share the same bibliography file.
 
 (5) ``` git push``` --> the push command will commit all your changes to the github master branch.
 
