@@ -22,3 +22,10 @@ The 'make' command will generate coldadc-testdoc.pdf
 ```git rm <filename>``` will delete the file that you not longer want. The file will only be removed in github after you commit the changes.
 
 ```git pull``` will update your files to the latest version in github. It's a good idea of pull files often so your local version does not diverge too much from the master version.
+
+## Steps for committing changes
+(1) ``` git status``` first to see the status of the files
+(2) ``` git add <filename>``` add any new tex files and figures that you want to commit
+(3) ``` git commit -a -m "Write a short note here about your commit```   
+(4) ``` git push``` the push command will commit all your changes to the github
+(5) ``` git pull``` now sync your local respository with other changes in the master branch.
