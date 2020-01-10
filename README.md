@@ -30,10 +30,12 @@ The 'make' command will generate coldadc-testdoc.pdf
 
 (2) ``` git add <filename>``` --> add any new tex files and figures that you want to commit
 
-(3) ``` git commit -a -m "Write a short note here about your commit" ``` --> this command only commits changes to your local repository.
+(3) ``` git rm <filename>``` --> tags any files that you want to remove from the respository. Your local copy will be removed.
 
-(4) ``` git pull``` --> now sync your local respository with other changes in the master branch.  You may need to resolve conflict if more than one people is working on the same file. This may happen for bibliography.tex since we all share the same bibliography file.
+(4) ``` git commit -a -m "Write a short note here about your commit" ``` --> this command only commits changes to your local repository.
 
-(5) ``` git push``` --> the push command will commit all your changes to the github master branch.
+(5) ``` git pull``` --> now sync your local respository with other changes in the master branch.  You may need to resolve conflict if more than one people is working on the same file. This may happen for bibliography.tex since we all share the same bibliography file.
+
+(6) ``` git push``` --> the push command will commit all your changes to the github master branch.
 
 
