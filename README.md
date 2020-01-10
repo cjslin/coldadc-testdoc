@@ -26,11 +26,11 @@ The 'make' command will generate coldadc-testdoc.pdf
 ```git log``` will show the commit history for the version you last pulled.
 
 ## Steps for committing changes
-(1) ``` git status```  --> first to see the status of the files
+(1) ``` git status```  --> first to see the status of the files.
 
-(2) ``` git add <filename>``` --> add any new tex files and figures that you want to commit
+(2) ``` git add <filename>``` --> add any new tex files and figures that you want to commit.
 
-(3) ``` git rm <filename>``` --> tags any files that you want to remove from the respository. Your local copy will be removed.
+(3) ``` git rm <filename>``` --> tags any files that you want to remove from the repository. Your local copy will be removed right away.
 
 (4) ``` git commit -a -m "Write a short note here about your commit" ``` --> this command only commits changes to your local repository.
 
