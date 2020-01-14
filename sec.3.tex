@@ -1,7 +1,43 @@
 \label{sec:3}
 
-Note to author: Discuss functional testing including reading/writing registers with I2C and
-UART, verifying the data I/O, including LVDS current control, and
-verifying clock generation.
-
-
+COLDADC is highly programmable.  Many circuit blocks can be bypassed and two versions of a number of circuit blocks are included to mitigate the risk that one might fail.  Testing at Fermilab concentrated on verifying the functionality of all of the circuit blocks.  Three design errors were revealed and a number of documentation errors were corrected.  The table below summarizes the tests.
+ 
+ \begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{ Test/Circuit} & Result  \\ \hline \hline
+Power on &  No shorts \\ \hline
+I2C & Works as designed (registers can be written and read) \\ \hline
+Reset & Works as designed (registers are set to default values) \\ \hline
+UART & Works as designed \\ \hline
+LVDS I/O & Works as designed (output amplitude controlled as designed) \\ \hline
+Clock Generation & 16 MHz clock verified \\ \hline
+Data Formatter & Works as designed \\ \hline
+Band Gap Reference & Works $\sim$as designed at room temperature, but fails when cold. \\ \hline
+ & Problem traced to a design error (inclusion of the wrong \\ \hline
+ &  OP Amp in the current source DAC); works as designed \\ \hline
+ &  with elevated VDDA2P5 (needs 2.7V at 77K) \\ \hline
+ CMOS Reference & Works as designed \\ \hline
+ Automatic Calibration & Fails.  Calibration can be done by using control \\ \hline
+  & registers to force the sequence of steps required \\ \hline
+   & and doing arithmetic off-chip.\\ \hline
+    & Eventually we noticed that when automatic calibration is \\ \hline
+     & attempted, the low order bytes of W0 and W2 for every \\ \hline
+      & ``calibrated'' stage are equal. Simulation verified that  \\ \hline
+       & this is due to a timing error storing W0 and W2. \\ \hline
+ ADC Correction Logic & Works as designed (loaded fake comparator output \\ \hline
+  & values; resulting ADC output is as expected). \\ \hline
+Pipeline ADC & Linear ramp yields close to linear output; \\ \hline
+ & deviation from linear at extremes of ramp; \\ \hline
+  & no significant deviation from linear when cold. \\ \hline
+Input buffers & Significant non-linearity observed. \\ \hline
+ & Problem traced to circuit naming confusion that resulted \\ \hline
+ & in level shifters being omitted from input buffers. \\ \hline
+ & Buffers operate $\sim$as designed with elevated VDDD1P2 \\ \hline
+ Sample and Hold and MUX & Require elevated VDDD1P2 because \\ \hline
+ & inputs come through input buffers. \\ \hline
+\end{tabular}
+\caption{Functional Testing.}
+\label{tab:Functionality}
+\end{table}
