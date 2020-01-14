@@ -4,10 +4,7 @@ The DUNE ColdADC is a digitizer ASIC intended for operation in the Deep Undergro
 
 The ColdADC was implemented in 65 nm CMOS by a team comprised of engineers from Fermilab (FNAL), Brookhaven National Laboratory (BNL), and Lawrence Berkeley National Laboratory (LBNL). The prototype was submitted for fabrication in late 2018 and received in early 2019. Evaluation is ongoing. 
 
-The first prototype meets essential requirements (except suitability for long-term reliable operation at 88 K). The key performance specification, noise, is as expected. The prototype is currently being integrated into a new revision of the DUNE Far Detector Front-End Mother Board (FEMB). Preliminary results are good, and the DUNE Far Detector FEMB is displaying better noise performance than the SBND FEMB, which uses a Commercial Off-the-Shelf (COTS) ADC. This enables the use of a lower gain setting in LArASIC.
-
-The key specifications of the ColdADC compared to the measured results are presented in Table~\ref{tab:coldadc_specs}.
-
+The first prototype meets essential requirements. The key performance specification, noise, is as expected. The prototype is currently being integrated into a new revision of the DUNE Far Detector Front-End Mother Board (FEMB). Preliminary results are good, and the DUNE Far Detector FEMB is displaying better noise performance than the SBND FEMB, which uses a Commercial Off-the-Shelf (COTS) ADC. This enables the use of a lower gain setting in LArASIC. The key specifications of the ColdADC compared to the measured results are presented in Table~\ref{tab:coldadc_specs}.
 \begin{table}[h]
 \centering
 \begin{tabular}{|c|c|c|c|}
@@ -30,3 +27,5 @@ Power Consumption & $<$50 mW/channel(??) & 26 mW/channel & At 290 K \\ \hline
 \caption{Summary of Results}
 \label{tab:coldadc_specs}
 \end{table}
+
+To ensure the ColdADC can operate long-term at 88 K, the ASIC was designed using high-reliability principles developed by BNL. Studies conducted by BNL determined that hot electron effects can cause substrate damage in CMOS circuits and these effects are exacerbated by operation at cold temperature. In order to mitigate hot electrons by reducing the magnitude of the electric field at the gate-drain interface, the circuits on the ColdADC prototype are designed with a minimum length of 50\% larger than the minimum length allowed by the process, and the power supplies are kept at 10\% below their nominal values. Both the analog and digital circuits, the synthesized digital circuits included in the ColdADC use a custom standard cell library with larger transistor lengths than nominal. In addition, the architecture of the ADC was chosen as the Pipelined ADC, whose performance depends primarily on the matching of ratioed capacitors. Studies conducted by BNL showed capacitor performance degraded less than active devices under cold conditions. 
