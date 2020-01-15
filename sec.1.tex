@@ -10,7 +10,7 @@ The first prototype meets essential requirements. The key performance specificat
 \begin{tabular}{|c|c|c|c|}
 \hline
 \textbf{ Specification } & \textbf{Value} & \textbf{Result} & \textbf{Note}  \\ \hline \hline
-Operation Temperature &  RT and 88 K & Success & \\ \hline
+Operation Temperature &  RT and 87 K & Success & \\ \hline
 Sampling Rate & 2 MHz & 2 MHz & \\ \hline
 Noise & 200 $\mu$V-rms & 189 $\mu$V-rms & @ LN$_2$ temp \\ \hline
 Differential Non- & $\pm$0.5 LSB (at 12-bit level) & $+0.2$ to $-0.5$ LSB & @LN$_2$ ; typical values \\
@@ -28,10 +28,12 @@ Power Consumption & $<$50 mW/channel(??) & 24 mW/channel &  \\ \hline
 \label{tab:coldadc_specs}
 \end{table}     1000
 
-To ensure the ColdADC can operate long-term at 87 K, the ASIC was designed using high-reliability principles developed by BNL. 
-Studies conducted by BNL determined that hot electron effects can cause substrate damage in CMOS circuits and these effects 
-are exacerbated by operation at cold temperature. In order to mitigate hot electrons by reducing the magnitude of the electric 
-field at the gate-drain interface, the circuits on the ColdADC prototype are designed with a minimum transistor channel 
+In order to mitigate the hot carrier effect (and ensure long operational lifetime at 87 K), the circuits in the ColdADC prototype
+%To ensure the ColdADC can operate long-term at 87 K, the ASIC was designed using high-reliability principles developed by BNL. 
+%Studies conducted by BNL determined that hot electron effects can cause substrate damage in CMOS circuits and these effects 
+%are exacerbated by operation at cold temperature. In order to mitigate hot electrons by reducing the magnitude of the electric 
+%field at the gate-drain interface, the circuits on the ColdADC prototype 
+are designed with a minimum transistor channel 
 length 50\% longer than the minimum length allowed by the process, and the power supplies are kept at 10\% below their nominal 
 values. To follow this rule, the synthesized digital circuits use a custom standard cell library with longer 
 transistors than the foundry-supplied library. In addition, the architecture of the ADC was chosen as the Pipelined ADC, whose 
