@@ -28,4 +28,12 @@ Power Consumption & $<$50 mW/channel(??) & 24 mW/channel &  \\ \hline
 \label{tab:coldadc_specs}
 \end{table}     1000
 
-To ensure the ColdADC can operate long-term at 87 K, the ASIC was designed using high-reliability principles developed by BNL. Studies conducted by BNL determined that hot electron effects can cause substrate damage in CMOS circuits and these effects are exacerbated by operation at cold temperature. In order to mitigate hot electrons by reducing the magnitude of the electric field at the gate-drain interface, the circuits on the ColdADC prototype are designed with a minimum transistor channel length 50\% longer than the minimum length allowed by the process, and the power supplies are kept at 10\% below their nominal values. In order to follow this rule, the synthesized digital circuits use a custom standard cell library with longer transistors than the foundry-supplied library. In addition, the architecture of the ADC was chosen as the Pipelined ADC, whose performance depends primarily on the matching of ratioed capacitors. Studies conducted by BNL showed capacitor performance degraded less than active devices under cold conditions. 
+To ensure the ColdADC can operate long-term at 87 K, the ASIC was designed using high-reliability principles developed by BNL. 
+Studies conducted by BNL determined that hot electron effects can cause substrate damage in CMOS circuits and these effects 
+are exacerbated by operation at cold temperature. In order to mitigate hot electrons by reducing the magnitude of the electric 
+field at the gate-drain interface, the circuits on the ColdADC prototype are designed with a minimum transistor channel 
+length 50\% longer than the minimum length allowed by the process, and the power supplies are kept at 10\% below their nominal 
+values. To follow this rule, the synthesized digital circuits use a custom standard cell library with longer 
+transistors than the foundry-supplied library. In addition, the architecture of the ADC was chosen as the Pipelined ADC, whose 
+performance depends primarily on the matching of ratioed capacitors. Studies conducted by BNL showed capacitor performance 
+degraded less than active devices under cold conditions. 
