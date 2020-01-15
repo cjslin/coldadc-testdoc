@@ -14,28 +14,28 @@ UART & Works as designed \\ \hline
 LVDS I/O & Works as designed (output amplitude controlled as designed) \\ \hline
 Clock Generation & 16 MHz clock verified \\ \hline
 Data Formatter & Works as designed \\ \hline
-Band Gap Reference & Works $\sim$as designed at room temperature, but fails when cold. \\ \hline
- & Problem traced to a design error (inclusion of the wrong \\ \hline
- &  OP Amp in the current source DAC); works as designed \\ \hline
+Band Gap Reference & Works $\sim$as designed at room temperature, but fails when cold. \\ 
+ & Problem traced to a design error (inclusion of the wrong \\ 
+ &  OP Amp in the current source DAC); works as designed \\ 
  &  with elevated VDDA2P5 (needs 2.7V at 77K) \\ \hline
  CMOS Reference & Works as designed \\ \hline
- Automatic Calibration & Fails.  Calibration can be done by using control \\ \hline
-  & registers to force the sequence of steps required \\ \hline
-   & and doing arithmetic off-chip.\\ \hline
-    & Eventually we noticed that when automatic calibration is \\ \hline
-     & attempted, the low order bytes of W0 and W2 for every \\ \hline
-      & ``calibrated'' stage are equal. Simulation verified that  \\ \hline
+ Automatic Calibration & Fails.  Calibration can be done by using control \\ 
+  & registers to force the sequence of steps required \\ 
+   & and doing arithmetic off-chip.\\ 
+    & Eventually we noticed that when automatic calibration is \\ 
+     & attempted, the low order bytes of W0 and W2 for every \\ 
+      & ``calibrated'' stage are equal. Simulation verified that  \\ 
        & this is due to a timing error storing W0 and W2. \\ \hline
- ADC Correction Logic & Works as designed (loaded fake comparator output \\ \hline
+ ADC Correction Logic & Works as designed (loaded fake comparator output \\ 
   & values; resulting ADC output is as expected). \\ \hline
-Pipeline ADC & Linear ramp yields close to linear output; \\ \hline
- & deviation from linear at extremes of ramp; \\ \hline
+Pipeline ADC & Linear ramp yields close to linear output; \\ 
+ & deviation from linear at extremes of ramp; \\ 
   & no significant deviation from linear when cold. \\ \hline
-Input buffers & Significant non-linearity observed. \\ \hline
- & Problem traced to circuit naming confusion that resulted \\ \hline
- & in level shifters being omitted from input buffers. \\ \hline
+Input buffers & Significant non-linearity observed. \\ 
+ & Problem traced to circuit naming confusion that resulted \\ 
+ & in level shifters being omitted from input buffers. \\
  & Buffers operate $\sim$as designed with elevated VDDD1P2 \\ \hline
- Sample and Hold and MUX & Require elevated VDDD1P2 because \\ \hline
+ Sample and Hold and MUX & Require elevated VDDD1P2 because \\ 
  & inputs come through input buffers. \\ \hline
 \end{tabular}
 \caption{Functional Testing.}

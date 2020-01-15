@@ -1,0 +1,10 @@
+\label{sec:5.6}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% IR Drop
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+At room temperature, when the test inputs are used to test the pipeline ADCs individually (bypassing the input buffers, Sample and Hold Amplifiers (SHAs), and the SHA multiplexer), significant non-linearity is observed for input signals near the voltage extremes of the ADC.  At cryogenic temperature, no significant deviation from linearity is observed.  We interpret this as evidence that there is an IR drop on the analog 2.5V power when the chip is operated at room temperature.  The fact that the non-linearity is not observed at cryogenic temperature is consistent with the fact that the resistivity of the metal used to distribute the power is greatly reduced at cryogenic temperature. 
+Metal layers M8 and M9 were used for power distribution.  The redistribution layer (AP) was not used and could easily be added to the power mesh in the analog sections of COLDADC.  We will make this change in the next submission.
