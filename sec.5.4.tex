@@ -80,4 +80,8 @@ We also observed spikes in the DNL plots while the ColdADC was configured to fre
   \label{fig:linearity_frozensha}
 \end{figure}
 
-Evidence of linearity degradation only during the free running SHA mode indicate couple other possible issues: possible overlapping of the clocks for the MUX's and/or insufficient settling of MUX's. It is very difficult to simulate MUX's effects on ADC linearity. We are still looking to understand the root cause for linearity degradation. To improve this we will redesign the MUX's to be faster and improve the clocking scheme. 
+Another observation was that the DNL spikes were larger when the ASIC was cooled down, a possible explanation for this is the ON resistance of the switches (MUX) is significantly larger at cold than in warm. Redesigning the MUX to be faster will solve this problem aswell.  
+
+Evidence of linearity degradation only during the free running SHA mode indicate couple other possible issues: possible overlapping of the clocks for the MUX's and/or insufficient settling of MUX's. It is very difficult to simulate MUX's effects on ADC linearity. We are still in the process of understanding and proving the root cause for linearity degradation in simulations. To fix this, we will redesign the MUX's to be faster and improve the clocking scheme. 
+
+
