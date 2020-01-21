@@ -19,7 +19,10 @@ Measured ADC INL is approximately 1 LSB at 12-bit level, however simulations sug
 
 %Reference settling issue was investigated by increasing the current of the reference buffers, on the other hand the reference buffers themselves may also be struggling to settle. This was investigated by slowing down the chip. 
 
-The ADC linearity is limited by insufficient op-amp gain in the stages. Since the calibration algorithm can only correct linear gain errors, non-linearity beyond the expectation could and will limit the performance. The op-amp becomes nonlinear as their swing increases because the output resistance of the devices connected to the output decreases when the voltage across them is reduced. The main suspect is the raw open-loop gain is lower than expected and the closed-loop rejection of the non-linearity is not good enough. To verify the large closed-loop gain non-linearity in the stages, references were clamped down and the evidence of op-amps becoming less and less non-linear when we reduce the swing become apparent. Figures \ref{fig:linearity_100mv} through \ref{fig:linearity_300mv} demonstrate this. 
+The ADC linearity is limited by insufficient op-amp gain in the stages. Since the calibration algorithm can only correct linear gain errors, non-linearity beyond the expectation could and will limit the performance. The op-amp becomes nonlinear as their swing increases because the output resistance of the devices connected to the output decreases when the voltage across them is reduced. The main suspect is the raw open-loop gain is lower than expected and the closed-loop rejection of the non-linearity is not good enough. To verify the large closed-loop gain non-linearity in the stages, 
+%references were clamped down and the evidence of op-amps becoming less and less non-linear when we reduce the swing become apparent. 
+reference voltages were adjusted to reduce the dynamic range of each stage and measurements demonstrate that this increased the linearity.
+Figures \ref{fig:linearity_100mv} through \ref{fig:linearity_300mv} demonstrate this. 
 
 %%\begin{figure}[h!]
 %%\centering
