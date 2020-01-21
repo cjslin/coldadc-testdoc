@@ -8,21 +8,21 @@ The measured ADC INL of the Cold ADC is approximately 1 LSB at a 12-bit level. H
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.7\linewidth]{figures/prakash_fig/linearity_100mv.JPG}
-  \caption{ADC linearity with VREFN/P +/- 100mV (Fig 15)}
+  \caption{ADC linearity with VREFN/P +/- 100mV}
   \label{fig:linearity_100mv}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.7\linewidth]{figures/prakash_fig/linearity_200mv.JPG}
-  \caption{ADC linearity with VREFN/P +/- 200mV (Fig 16)}
+  \caption{ADC linearity with VREFN/P +/- 200mV}
   \label{fig:linearity_200mv}
 \end{figure}
 
 %\begin{figure}[h!]
 %\centering
 %  \includegraphics[width=0.7\linewidth]{figures/prakash_fig/linearity_300mv.JPG}
-%  \caption{ADC linearity with VREFN/P +/- 300mV (Fig 17->Deleted)}
+%  \caption{ADC linearity with VREFN/P +/- 300mV}
 %  \label{fig:linearity_300mv}
 %\end{figure}
 
@@ -31,8 +31,8 @@ The results of this experiment is shown in Figure~\ref{fig:linearity_GB_ON}. The
 
 \begin{figure}[h!]
 \centering
-  \includegraphics[width=0.6\linewidth]{figures/prakash_fig/linearity_GB_ON.JPG}
-  \caption{Linearity with Gain Boosters ON (Fig 19 ->17)}
+  \includegraphics[width=0.7\linewidth]{figures/prakash_fig/linearity_GB_ON.JPG}
+  \caption{Linearity with Gain Boosters ON}
   \label{fig:linearity_GB_ON}
 \end{figure}
 
@@ -41,7 +41,7 @@ A schematic of the op-amp used in the ADC stages is shown in Figure~\ref{fig:op_
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.9\linewidth]{figures/prakash_fig/op_amp.JPG}
-  \caption{Op-Amp used in ColdADC stages. (Fig 18->18)}
+  \caption{Op-Amp used in ColdADC stages.}
   \label{fig:op_amp_1}
 \end{figure}
 
@@ -51,7 +51,7 @@ To narrow down what precisely in the op-amp was causing the lower-than-expected 
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.6\linewidth]{figures/prakash_fig/linearity_GB_OFF.JPG}
-  \caption{Linearity with Gain Boosters OFF (Fig 20 -> 19)}
+  \caption{Linearity with Gain Boosters OFF.}
   \label{fig:linearity_GB_OFF}
 \end{figure}
 
@@ -59,14 +59,14 @@ For further evidence, we modeled the ADC behaviorally using MATLAB. The simulate
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.6\linewidth]{figures/prakash_fig/behav_GB_ON.JPG}
-  \caption{MATLAB model - gain boosters on -> 80 dB op-amp gain (Fig 21-> 20)}
+  \caption{MATLAB model - gain boosters on -> 80 dB op-amp gain.}
   \label{fig:behav_GB_ON}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.6\linewidth]{figures/prakash_fig/behav_GB_OFF.JPG}
-  \caption{MATLAB model - gain boosters off -> 74 dB op-amp gain (Fig 22-> 21)}
+  \caption{MATLAB model - gain boosters off -> 74 dB op-amp gain.}
   \label{fig:behav_GB_OFF}
 \end{figure}
 Analysis of the circuits in the gain-boosting amplifiers indicates that they may have insufficient design margin in their biasing networks. The gain-boosting amplifiers and op-amp can be improved by redesigning them to better center their operating points across process and temperature.
@@ -76,14 +76,14 @@ Corner analysis of the complete op-amp before and after the gain-boosting redesi
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.8\linewidth]{figures/prakash_fig/opamp_gain_rt.JPG}
-  \caption{Corner analysis of the op-amp gain, with current gain booster circuit (Fig 23->22)}
+  \caption{Corner analysis of the op-amp gain, with current gain booster circuit.}
   \label{fig:opamp_gain_rt}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.8\linewidth]{figures/prakash_fig/opamp_gain_m_rt.JPG}
-  \caption{Corner analysis of the op-amp gain, with improved gain booster circuit (Fig 24->23)}
+  \caption{Corner analysis of the op-amp gain, with improved gain booster circuit.}
   \label{fig:opamp_gain_m_rt}
 \end{figure}
 
