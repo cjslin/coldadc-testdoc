@@ -2,4 +2,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%% 
 % (DABROWSKI) BGR Op-amp
+% Grace's version
 %%%%%%%%%%%%%%%%%%%%%%%%%
+To operate correctly, the ColdADC requires accurate voltage references for the ADC. In addition, the various analog circuits on the prototype require bias currents. To mitigate risk, the ColdADC includes two redundant reference generation blocks to supply these needed voltages and currents, one block based on a bandgap reference, and one based on a CMOS reference. 
+
+A voltage proportional to the bandgap of silicon is generated in the V-BGR core. This voltage is then converted to a current in the I-DAC block to generate bias currents. In addition, the bandgap voltage is scaled by the various V-DAC blocks. Because the reference voltages for the ADC span a significant portion available power supply voltage, two different versions of the V-DAC are required: one to generate voltages near the supply voltage, and one to generate voltages near ground. Unfortunately, the wrong version of the V-DAC was included to generate VREFP (a voltage near the supply is required, but the included V-DAC is the version intended for voltages near ground). The included V-DAC can still generate the required voltage for VREFP if it is given significant additional headroom, in other words if VDDA is elevated above nominal.
+
+While the BJT-based reference is fully functional in this case, it is not appropriate for long-term reliability because the supply should be operated below nominal, not above. The fix for this design error is simple: replace the VDAC that generates VREFP with the appropriate version of the V-DAC.
+
