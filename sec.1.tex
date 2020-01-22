@@ -12,7 +12,8 @@ The first prototype meets essential requirements. The key performance specificat
 \textbf{ Specification } & \textbf{Value} & \textbf{Result} & \textbf{Note}  \\ \hline \hline
 Operation Temperature &  Room Temp. (RT) and 88 K & Success & \\ \hline
 Sampling Rate & 2 MHz & 2 MHz & \\ \hline
-Noise & 200 $\mu$V-rms & 189 $\mu$V-rms & @ LN$_2$ temp \\ \hline
+Noise & 200 $\mu$V-rms & 189 $\mu$V-rms & @ LN$_2$ temp \\ 
+      &    --            & (302 $\mu$V-rms) & (RT) \\ \hline
 Differential Non- & $\pm$0.5 LSB (at 12-bit level) & $+0.2$ to $-0.5$ LSB & @LN$_2$ ; typical values \\
 linearity (DNL) & & &  \\ \hline
 Integral Non- & $\pm$1 LSB (at 12-bit level) & $+1.2$ to $-1.1$ LSB & @LN$_2$, typical values \\
@@ -21,8 +22,8 @@ Effective-Number- & 11.0 bits & <mean>=10.6 bits & @ LN$_2$ \\
 of-Bits (ENOB) & & rms=0.3 bits & \\ \hline
 No Missing Codes & N/A & Success & @LN$_2$ and RT \\ 
 Across Dynamic Range & & & \\ \hline
-Crosstalk  & No Specification & $<1\%$ & RT \\ 
-           &                  & ($<0.5\%$) & (@LN$_2$) \\ \hline
+Crosstalk  & No Specification & $<0.5\%$ & @LN$_2$ \\ 
+           &                  & ($<1\%$) &  (RT) \\ \hline
 %Power Consumption & $<$50 mW/channel(??) & 24 mW/channel &  \\ \hline
 \end{tabular}
 \caption{Summary of Results}
