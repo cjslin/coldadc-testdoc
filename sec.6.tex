@@ -4,9 +4,73 @@
 % (FURIC) Production Testing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+A Production Test Site is currently being assembled at the Univeristy of Florida to perform QC of all the packaged ColdADC ASIC.  The production QC procedure was developed and tested on the first 33 packaged chips at BNL. In this section, we describe the production test system and the results from the first 33 chips.
 
 \subsection{Test Setup}
 \label{sec:6.1}
+The ColdADC QC teststand is a dedicated system to characterize the ColdADC performance with a low distortion 
+signal generator SRS DS360, which is very similar to the test setup described in Section~\ref{sec:2.2}.  Shown in Figure 1 
+is the block diagram of the setup. The testboard has an ASIC socket mezzanine card to avoid having to solder the ColdADC chips. 
+This convenience, however, introduces additional capacitance from the ASIC socket which may slightly degrade the test results.
+Since the main purpose of the production testing is to distinguish good chips from bad chips, the performance degradation 
+from the additional capacitance is not an issue. 
+Instead of an on-board oscillator to provide 100MHz clock for FPGA Mezzanine, an external clock source SRS CG635 is used to provide a 
+stable clock for both room temperature and liquid nitrogen operations. For ENOB/FFT measurements, clock synchronization between the 
+board and the signal generator is required.  Without an external clock source it can be difficult to obtain a stable synchronization 
+between the testboard and the signal generator. 
+%In fact, for internal ADC core measurements (8 MHz Nyquist bandwidth), 
+%unwanted spikes at 2 MHz and 6 MHz can appear at cold. This issue is strongly mitigated by adding an external clean clock source. 
+%So, the teststand is updated with the CG635 generator sends a 100 MHz clock to the board and a 10 MHz synchronized signal to the DS360. 
+%Figure 2 shows the test setup at room temperature while Figure 3 shows the test setup at LN2 temperature
+
+The flowchart of the QC process is shown Figure~\ref{fig:qc_flowchart}.  The chart illustrates the sequence of steps for characterizing 
+the functionality and performance of the chip. At every iteration, the measurements is done using BJT reference and then repeated 
+again using the CMOS reference. 
+%With a certain number of tested chips, it will be possible to highlight differences in performance between measurements taken 
+%using one reference instead of the other. 
+%The test flow includes input configuration, initialization checkout, static linearity (INL/DNL per channel), 
+%Dynamic Behavior (ENOB/SFDR/SINAD per channel), DC noise per channel, and ADC core characterization. 
+The list below describes the QC steps in more detail: 
+\begin{enumerate}
+\item Input configuration: ColdADC chip ID and test board ID are recorded, the path for data storage is specified. 
+\item Initialization checkout: mainly to check ColdADC functionality. It includes power consumption with different 
+configurations, power cycles, I2C/UART communication check, pattern and register check, reference sweeping check, 
+synchronization and calibration check. Any chip failed in any procedure in this checkout is treated as a bad chip. 
+\item  Static linearity: INL/DNL results are obtained with a sine wave input from the DS360 generator. Data and plots 
+are generated with the sine wave code-density method. Performances at both 2 MS/s/ch and 500 kS/s/ch are measured.
+\item Dynamic Behavior: ENOB/SFDR/SINAD is calculated from the FFT plot obtained by using coherent sampling. 
+Performances at both 2 MS/s/ch and 500 kS/s/ch are measured. 
+\item DC noise: Two DC points, 200mV and 900mV are chosen.
+\item ADC core characterization (optional): DNL/INL, FFT, and DC noise. 
+\end{enumerate}
+
+The test procedure is largely automated using Python scripts. The only step that requires manual intervention is to replace the ASIC chips 
+at the end of the measurement. When the test is completed, the Python script automatically generates a detailed report in pdf format. 
+The report includes:
+\begin{enumerate}
+\item Summary: date and time, temperature, chip and board IDs, power consumption and characterization results (CMOS reference only, can be changed to BJT);
+\item Initialization checkout: ADC power consumption with both BJT and CMOS references, sweep plots of reference voltages and currents;
+\item Calibration weights: recorded weights listed with respect to internal ADC stages;
+\item Noise study: RMS noise for each channel and comparison between all channels. Four pages in total: 200 mV and 900 mV baselines for both BJT and CMOS references;
+\item Channels characterization: noise, linearity and dynamic studies, with both BJT and CMOS references for comparison. Each page collects results for one channel;
+\item ADC test input: internal ADC characterization for two sampling rates, 4 MS/s and 16 MS/s.
+\end{enumerate}
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.8\linewidth]{figures/QC_flowchart.png}
+  \caption{ColdADC QC Flowchart.}
+  \label{fig:qc_flowchart}
+\end{figure}
+
+At the moment, the test data are stored in a local database at BNL. U. of Florida group is developing an online database for the ColdADC QC test that will be used for all future production tests.
+%Ivan Furic research team from Florida University is going to develop an online database for the ColdADC QC test. BNL provides hardware, FPGA firmware, python scripts and necessary support to help them replicate the test procedure at BNL.  Florida University is responsible for QC test of 100 ColdADC chips in the coming two or three months. 
 
 \subsection{Results}
+\label{sec:6.2}
+For the initial production QC test, a batch of 33 ColdADCs were tested. One of the chips (\#00096)  drew very high current (>1 A) when it 
+was first powered and was excluded from further QC testing. It was found that the bad chip had a resistance of $<$ 5$\Omega$ between 
+VDDA2P5 and VSSA2P5, while the nominal resistance should be about 12 k$\Omega$. The cause of the failure is not clear; may be due to 
+manufacturing defect or handling issues. In additional to the 33 QC chips, 20 other chips were previously tested at BNL and passed 
+functionality tests. Based on a sample of 53 chips (51 packaged and 2 bare dies), the functionality failure rate of ColdADC is less than 2\%.
+
 
