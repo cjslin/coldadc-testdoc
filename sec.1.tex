@@ -2,9 +2,17 @@
 
 The DUNE ColdADC is a digitizer ASIC intended for operation in the Deep Underground Neutrino Experiment (DUNE) Far Detectors. It will operated immersed in Liquid Argon (LAr) and will need to operate reliably, without any servicing or component replacement, for over 30 years at a temperature of 88 K.
 
-The ColdADC was implemented in 65 nm CMOS by a team comprised of engineers from Fermilab (FNAL), Brookhaven National Laboratory (BNL), and Lawrence Berkeley National Laboratory (LBNL). The prototype was submitted for fabrication in late 2018 and received in early 2019. Evaluation is ongoing. 
+The ColdADC was implemented in 65 nm CMOS by a team comprised of engineers from Fermilab (FNAL), Brookhaven National Laboratory (BNL), and Lawrence Berkeley National Laboratory (LBNL). The block diagram of the ColdADC is shown in Figure~\ref{fig:coldadc_blockdiagram}.
+Each ColdADC has 16 input channels that can either be single-ended or fully differential. The input signals go though a buffer block followed by a Sample-and-Hold (SHA) circuit. The buffer block contains a Single-to-Differential Converter (SDC) and a Differential Buffer (DB). The analog samples after the SHA are multiplexed by a MUX and then digitized by one of two piplined ADCs.
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.8\linewidth]{figures/coldadc_blockdiagram.pdf}
+  \caption{ColdADC block diagram.}
+  \label{fig:coldadc_blockdiagram}
+\end{figure}
 
-The first prototype meets essential requirements. The key performance specification, noise, is as expected. The prototype is currently being integrated into a new revision of the DUNE Far Detector Front-End Mother Board (FEMB). Preliminary results are good, and the DUNE Far Detector FEMB is displaying better noise performance than the SBND FEMB, which uses a Commercial Off-the-Shelf (COTS) ADC. This enables the use of a lower gain setting in LArASIC and thus larger dynamic range. The key specifications of the ColdADC compared to the measured results are presented in Table~\ref{tab:coldadc_specs}.
+The prototype was submitted for fabrication in late 2018 and received in early 2019. Evaluation is ongoing. 
+The first prototype meets essential requirements. The key performance specification, noise, is as expected. Recently the ColdADC has been integrated into a new revision of the DUNE Far Detector Front-End Mother Board (FEMB). Preliminary results are good, and the DUNE Far Detector FEMB is displaying better noise performance than the SBND FEMB, which uses a Commercial Off-the-Shelf (COTS) ADC. This enables the use of a lower gain setting in LArASIC and thus larger dynamic range. The key specifications of the ColdADC compared to the measured results are presented in Table~\ref{tab:coldadc_specs}.
 \begin{table}[h]
 \centering
 \begin{tabular}{|c|c|c|c|}

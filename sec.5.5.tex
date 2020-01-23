@@ -4,9 +4,9 @@
 % (DABROWSKI) SDC Linearity
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A single ColdADC input channel comprises of an Input Buffer block followed by a Sample-and-Hold (SHA) circuit, followed by a multiplexer that multiplexes outputs of 8 channels to a single fully-differential ADC core. ColdADC contains two cores, therefore, channels from 0 to 7 are multiplexed to the first core and channels from 8 to 15 to the second one.
+%A single ColdADC input channel comprises of an Input Buffer block followed by a Sample-and-Hold (SHA) circuit, followed by a multiplexer that multiplexes outputs of 8 channels to a single fully-differential ADC core. ColdADC contains two cores, therefore, channels from 0 to 7 are multiplexed to the first core and channels from 8 to 15 to the second one.
 
-Input Buffer contains two blocks - a Single-to-Differential Converter (SDC) and a Differential Buffer (DB). The former one accepts single-ended signals and converts them to fully-differential ones, has a low-capacitance input-impedance, and drives the capacitive switching load of the SHA. The latter one buffers differential input signals, has a static capacitive input impedance, and drives the switching load of the SHA. Each of these two blocks can be separately powered-down and bypassed.
+The ColdADC Input Buffer contains two blocks - a Single-to-Differential Converter (SDC) and a Differential Buffer (DB). The former one accepts single-ended signals and converts them to fully-differential ones, has a low-capacitance input-impedance, and drives the capacitive switching load of the SHA. The latter one buffers differential input signals, has a static capacitive input impedance, and drives the switching load of the SHA. Each of these two blocks can be separately powered-down and bypassed.
 
 LArASIC outputs single-ended waveforms; therefore, the performance of each ADC input channel when accepting single-ended signals is of high importance. Single-ended input signals to the ADC can be converted to fully-differential signals in either a SDC or SHA block. The performance merit of primary interest are input channel DNL and INL at room (RT) and cryogenic temperatures (Liquid Nitrogen - LN) when driven by a single-ended source, with and without the SDC block.
 
