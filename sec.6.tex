@@ -9,8 +9,9 @@ A Production Test Site is currently being assembled at the Univeristy of Florida
 \subsection{Test Setup}
 \label{sec:6.1}
 The ColdADC QC teststand is a dedicated system to characterize the ColdADC performance with a low distortion 
-signal generator SRS DS360, which is very similar to the test setup described in Section~\ref{sec:2.2}.  Shown in Figure 1 
-is the block diagram of the setup. The testboard has an ASIC socket mezzanine card to avoid having to solder the ColdADC chips. 
+signal generator SRS DS360, which is very similar to the test setup described in Section~\ref{sec:2.2}.  
+Shown in Figure~\ref{fig:prodQC_blockdiagram} is the block diagram of the setup. The testboard has an ASIC 
+socket mezzanine card to avoid having to solder the ColdADC chips. 
 This convenience, however, introduces additional capacitance from the ASIC socket which may slightly degrade the test results.
 Since the main purpose of the production testing is to distinguish good chips from bad chips, the performance degradation 
 from the additional capacitance is not an issue. 
@@ -22,6 +23,12 @@ between the testboard and the signal generator.
 %unwanted spikes at 2 MHz and 6 MHz can appear at cold. This issue is strongly mitigated by adding an external clean clock source. 
 %So, the teststand is updated with the CG635 generator sends a 100 MHz clock to the board and a 10 MHz synchronized signal to the DS360. 
 %Figure 2 shows the test setup at room temperature while Figure 3 shows the test setup at LN2 temperature
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.8\linewidth]{figures/prodQC_blockdiagram.png}
+  \caption{Block diagram of ColdADC Production Testing setup.}
+  \label{fig:prodQC_blockdiagram}
+\end{figure}
 
 The flowchart of the QC process is shown Figure~\ref{fig:qc_flowchart}.  The chart illustrates the sequence of steps for characterizing 
 the functionality and performance of the chip. At every iteration, the measurements is done using BJT reference and then repeated 
@@ -73,4 +80,31 @@ VDDA2P5 and VSSA2P5, while the nominal resistance should be about 12 k$\Omega$. 
 manufacturing defect or handling issues. In additional to the 33 QC chips, 20 other chips were previously tested at BNL and passed 
 functionality tests. Based on a sample of 53 chips (51 packaged and 2 bare dies), the functionality failure rate of ColdADC is less than 2\%.
 
+\subsubsection{Power Consumption}
+The power consumption of ColdADC strongly depends on the chip configuration. The power consumption with VDDA2P5/VDDD2P5=2.5V, 
+VDDD1P2=2.1V, VDDIO=2.25V, SDC\&DB bypassed, CMOS reference, floating single-end input, and 2 MS/s sampling rate is summarized in in 
+Figure~\ref{fig:qc_power}. For this configuration, the average power consumption of ColdADC is about 413 mW at room and 450 mW at LN$_2$ temperature.
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.85\linewidth]{figures/qc_power.png}
+  \caption{Power consumption distribution.}
+  \label{fig:qc_power}
+\end{figure}
 
+\subsubsection{Linearity Results with 2 Ms/s/channel Sampling Rate}
+The results of the linearity and noise measurements at the nominal 2 Ms/s/channel sampling rate for the 33 chips are shown in 
+FigureX (RT) and FigureY (LN$_2$). 
+The QC tests are done with all 16 channels simultaneously connected to the signal source.
+Due to the known SHA/MUX crosstalk issue, if the sample rate is 2MS/s per channel, the performance is expected to be worse. 
+Another caveat is that the calibration of the ADC pipeline stages are not done for this result to shorten the testing cycle..
+%The degradation is allowed because it is consistent to all chips, and additional test with 500 kS/s per 
+%channel is also performed to confirm the degradation is caused by SHA/MUX crosstalk issue.  
+%The ColdADC internally is 16-bit. The DUNE experiment requires 12-bit ADC is required by 
+%DUNE experiment, ColdADC is truncated down to 12-bit by cut-off the lowest 4 bits. Meanwhile, in order to get ENOB, the coherency 
+%frequency of sine wave is calculated for 12-bit ADC followed the equation of IEEE standard. 
+Overall, the ColdADC performance is reasonably good, average of the worst DNL is 0.76LSB, average of the worst INL is 2.6LSB, 
+average of ENOB is 10.0 bit and average of DC noise at 900mV is 0.68vLSB. In addition, the spread of these 4 key parameters 
+among channels (or chips) is small.
+Cryogenic test is performed as well with the same configuration,  Figure 7 shows the statistical result. 
+By comparing Figure 6 and Figure 7, the linearity  performance of DNL, INL and ENOB do not show significant temperature dependence
+ but the DC noise at LN$_2$ is smaller than at RT due to the suppression of thermal noise at cryogenic temperature.  
