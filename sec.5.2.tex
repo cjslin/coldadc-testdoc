@@ -4,7 +4,5 @@
 % Level Shifter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Because the digital core of the Cold ADC uses 1.2 V rails, but many of the analog circuits on the chip use 2.5 V rails, level shifters are required to translate control settings from the 1.2 V voltage domain to the 2.5 V voltage domain. Unfortunately, due to confusion during the design process, the required level shifters that were required for the front end single-ended-to-differential input buffer were not included. Therefore, in order to configure the block correctly, the 1.2 V digital supply must be elevated. While this allows the chip to be operated successfully, it is not compatible with long-term reliability.
-
-The fix is to include the proper level shifters in the next version of Cold ADC. The fix has already been made in the layout.
+Because the digital core of the Cold ADC uses 1.2 V rails, but many of the analog circuits on the chip use 2.5 V rails, level shifters are required to translate control settings from the 1.2 V voltage domain to the 2.5 V voltage domain. Unfortunately, due to confusion during the design process, the required level shifters that were required for the front end single-ended-to-differential input buffer were not included. Therefore, in order to configure the block correctly, the 1.2 V digital supply must be elevated. While this allows the chip to be operated successfully, it is not compatible with long-term reliability. The fix is to include the proper level shifters in the next version of Cold ADC. The fix has already been made in the layout.
 

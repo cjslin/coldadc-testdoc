@@ -50,7 +50,7 @@ To narrow down what precisely in the op-amp was causing the lower-than-expected 
 
 \begin{figure}[h!]
 \centering
-  \includegraphics[width=0.6\linewidth]{figures/prakash_fig/linearity_GB_OFF.JPG}
+  \includegraphics[width=0.7\linewidth]{figures/prakash_fig/linearity_GB_OFF.JPG}
   \caption{Linearity with Gain Boosters OFF.}
   \label{fig:linearity_GB_OFF}
 \end{figure}
@@ -58,14 +58,14 @@ To narrow down what precisely in the op-amp was causing the lower-than-expected 
 For further evidence, we modeled the ADC behaviorally using MATLAB. The simulated linearity obtained after setting the op-amp open-loop gain in the model to 80 dB is shown in Figure~\ref{fig:behav_GB_ON}, which is a result similar to Figure~\ref{fig:linearity_GB_ON}. By reducing the open-loop gain to 74 dB, we obtained the result in Figure~\ref{fig:behav_GB_OFF} which closely follows the linearity structure of Figure~\ref{fig:linearity_GB_OFF}, this gives further evidence the issue is insufficient gain in the gain boosting amplifiers. Based on the behavioral modeling, we estimate the gain-boosting amplifiers are providing approximately 6 dB in additional gain, rather than the 14 dB that was expected.
 \begin{figure}[h!]
 \centering
-  \includegraphics[width=0.6\linewidth]{figures/prakash_fig/behav_GB_ON.JPG}
+  \includegraphics[width=0.7\linewidth]{figures/prakash_fig/behav_GB_ON.JPG}
   \caption{MATLAB model - gain boosters on -> 80 dB op-amp gain.}
   \label{fig:behav_GB_ON}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-  \includegraphics[width=0.6\linewidth]{figures/prakash_fig/behav_GB_OFF.JPG}
+  \includegraphics[width=0.7\linewidth]{figures/prakash_fig/behav_GB_OFF.JPG}
   \caption{MATLAB model - gain boosters off -> 74 dB op-amp gain.}
   \label{fig:behav_GB_OFF}
 \end{figure}
