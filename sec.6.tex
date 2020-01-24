@@ -22,12 +22,18 @@ between the testboard and the signal generator.
 %In fact, for internal ADC core measurements (8 MHz Nyquist bandwidth), 
 %unwanted spikes at 2 MHz and 6 MHz can appear at cold. This issue is strongly mitigated by adding an external clean clock source. 
 %So, the teststand is updated with the CG635 generator sends a 100 MHz clock to the board and a 10 MHz synchronized signal to the DS360. 
-%Figure 2 shows the test setup at room temperature while Figure 3 shows the test setup at LN2 temperature
+Figure~\ref{fig:prod_warmsetup} shows the test setup at room temperature.
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.8\linewidth]{figures/prodQC_blockdiagram.png}
   \caption{Block diagram of ColdADC Production Testing setup.}
   \label{fig:prodQC_blockdiagram}
+\end{figure}
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.7\linewidth]{figures/prod_warmsetup.png}
+  \caption{ColdADC QC test setup at room temperature.}
+  \label{fig:prod_warmsetup}
 \end{figure}
 
 The flowchart of the QC process is shown Figure~\ref{fig:qc_flowchart}.  The chart illustrates the sequence of steps for characterizing 
@@ -93,18 +99,55 @@ Figure~\ref{fig:qc_power}. For this configuration, the average power consumption
 
 \subsubsection{Linearity Results with 2 Ms/s/channel Sampling Rate}
 The results of the linearity and noise measurements at the nominal 2 Ms/s/channel sampling rate for the 33 chips are shown in 
-FigureX (RT) and FigureY (LN$_2$). 
-The QC tests are done with all 16 channels simultaneously connected to the signal source.
-Due to the known SHA/MUX crosstalk issue, if the sample rate is 2MS/s per channel, the performance is expected to be worse. 
-Another caveat is that the calibration of the ADC pipeline stages are not done for this result to shorten the testing cycle..
+Figures~\ref{fig:qc_lin2Mwarm} (RT) and Figure~\ref{fig:qc_lin2Mcold} (LN$_2$). 
 %The degradation is allowed because it is consistent to all chips, and additional test with 500 kS/s per 
 %channel is also performed to confirm the degradation is caused by SHA/MUX crosstalk issue.  
 %The ColdADC internally is 16-bit. The DUNE experiment requires 12-bit ADC is required by 
 %DUNE experiment, ColdADC is truncated down to 12-bit by cut-off the lowest 4 bits. Meanwhile, in order to get ENOB, the coherency 
 %frequency of sine wave is calculated for 12-bit ADC followed the equation of IEEE standard. 
-Overall, the ColdADC performance is reasonably good, average of the worst DNL is 0.76LSB, average of the worst INL is 2.6LSB, 
+Overall, the ColdADC performance is reasonably good, average of the worst DNL is 0.76 LSB, average of the worst INL is 2.6 LSB, 
 average of ENOB is 10.0 bit and average of DC noise at 900mV is 0.68vLSB. In addition, the spread of these 4 key parameters 
 among channels (or chips) is small.
 Cryogenic test is performed as well with the same configuration,  Figure 7 shows the statistical result. 
 By comparing Figure 6 and Figure 7, the linearity  performance of DNL, INL and ENOB do not show significant temperature dependence
  but the DC noise at LN$_2$ is smaller than at RT due to the suppression of thermal noise at cryogenic temperature.  
+The linearity results shown here are slightly worse than the ones shown in Section~\ref{sec:4} due to the known SHA/MUX crosstalk issue.
+For the QC tests, all 16 input channels are simultaneously connected to the signal source.
+Another caveat for the QC results is that the calibration of the ADC pipeline stages are not done to shorten the testing cycle time.
+
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.85\linewidth]{figures/qc_lin2Mwarm.png}
+  \caption{ColdADC QC Results at RT with 2 MS/s per channel sampling rate. ADC output is trucated to 12-bit.}
+  \label{fig:qc_lin2Mwarm}
+\end{figure}
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.85\linewidth]{figures/qc_lin2Mcold.png}
+  \caption{ColdADC QC Results at LN$_2$ temperature with 2 MS/s per channel sampling rate. ADC output is trucated to 12-bit.}
+  \label{fig:qc_lin2Mcold}
+\end{figure}
+
+
+
+\subsubsection{Linearity Results with 0.5 Ms/s/channel Sampling Rate}
+The SHA/MUX crosstalk issue mentioned in the earlier section is expected to be fixed in the next revision of the ColdADC.
+For now we can estimate the optimized performance without the crosstalk issue by repeating the QC measurements with a slower 
+sampling rate and still pulse all 16 channels simultaneously.
+Results at a sampling rate of 0.5 Ms/s per channel are shown in Figures~\ref{fig:qc_lin500Kwarm} (RT) and Figure~\ref{fig:qc_lin500Kcold} (LN$_2$). 
+%To predict the possible optimized performance of revision (if the SHA/MUX crosstalk issue is fixed), the QC test for each chip is conducted with ColdADC working at 500 kS/s per channel as well, as shown in Figure 8 is the result at room temperature and Figure 9 is the result at cryogenic temperature. 
+Compared to the result of 2MS/s per channel, the linearity is significantly better. Average of the worst INL/DNL is less than 1 LSB.
+Average of ENOB is nearly 11 bits at LN$_2$.  DC noise at room temperature is improved but no significant difference is observed at LN$_2$.
+%however, the DC noise is lower enough. 
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.85\linewidth]{figures/qc_lin500Kwarm.png}
+  \caption{ColdADC QC Results at RT with 0.5 MS/s per channel sampling rate. ADC output is trucated to 12-bit.}
+  \label{fig:qc_lin500Kwarm}
+\end{figure}
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.85\linewidth]{figures/qc_lin500Kcold.png}
+  \caption{ColdADC QC Results at LN$_2$ temperature with 0.5 MS/s per channel sampling rate. ADC output is trucated to 12-bit.}
+  \label{fig:qc_lin500Kcold}
+\end{figure}
