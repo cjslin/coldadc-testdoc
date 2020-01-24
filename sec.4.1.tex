@@ -3,6 +3,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %(GAO) Discuss noise performance
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The key performance metric for the ColdADC is its noise performance, as it directly impacts the 
+sensitivity of the experiment. The design goal for the ColdADC was for its internal noise to be well 
+below the noise of the LArASIC, so the LArASIC would dominate the overall noise of the system. 
+This has been achieved as the ADC met its goal of 200 $\mu$V-rms noise at LN$_2$ temperature. 
+Detailed measurements of the ASIC and system noise in different conditions follow.
 
 \subsubsection{ColdADC Only}
 The noise distribution for 16-channels from one ColdADC chip with the input floating are shown in Figure~\ref{fig:qc_noisewarm} (RT) and Figure~\ref{fig:qc_noisecold} (LN$_2$). The results are given in full 16-bit ADC output. The average noise is 6.7 LSB (302 $\mu$V-rms) at warm and 4.2 LSB (189 $\mu$V-rms) in LN$_2$, in 16-bit. The measurement is done with ColdADC configured after calibration, VDDA2P5/VDDD2P5=2.5 V, VDDD1P2=2.0 V, VDDIO=2.25 V, SDC bypassed. Separate study has shown that SDC noise is negligible. 
