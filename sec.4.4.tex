@@ -2,11 +2,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %(GAO) Calibration pulser
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\begin{figure}[h!]
-%\centering
-%  \includegraphics[width=0.7\linewidth]{figures/xtalk_LN2.png}
-%  \caption{Cross talk distribution at LN$_2$ temperature. The x-axis is the channel number with the injected pulse. The y-axis shows the amplitude of the crosstalk (in \%) for the remaining 15 channels.}
-%  \label{fig:xtalk_LN2}
-%\end{figure}
+The LArASIC has an internal 6-bit DAC to generate a voltage step through a charge injection 
+capacitor for calibration. Figure~\ref{fig:calibpulse} shows the pulse response of channel 0 at 
+room temperature.  LArASIC is configured with 14 mV/fC gain, 2.0 $\mu$s shaping time, 
+900mV baseline, output buffer off, DC coupling and 500pA leakage current. ColdADC is configured 
+with single-ended input, BGR reference and 16-bit calibrated data. The observed non-linearity of 
+0.19% is dominated by the non-linearity of the 6-bit DAC. The non-linearity of LArASIC and 
+ColdADC is expected to be less than 0.1\%.   
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=1.0\linewidth]{figures/calibpulse.png}
+  \caption{Response of LArASIC + ColdADC to the calibration pulse.}
+  \label{fig:calibpulse}
+\end{figure}
 
