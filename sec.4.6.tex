@@ -1,0 +1,37 @@
+\label{sec:4.6}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%(GAO) Discuss ColdADC Power Consumptions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The ColdADC is designed with serval power rails with 3 different voltages: VDDA2P5/VDDD2P5 = 2.25 V, VDDIO = 2.25 V, 
+and VDDD1P2 = 1.1 V. To achieve good ADC performance, the voltages are elevated to account for IR drop and other
+design issues. The  VDDA2P5/VDDD2P5 voltage is raised to 2.5 V when using CMOS reference (2.7 V when using BGR), and 
+VDDD1P2 to 2.1 V.
+Table~\ref{tab:powerconsumed} shows the measured power consumption under several operating configuration. If ColdADC is powered as 
+the design expected, the power consumption is $\approx$ 20 mW per channel with SDC  bypassed (powered down).  If SDC is enabled, 
+each channel will consume an extra $\approx$ 6 mW.  When BGR reference is applied, with the elevated VDDA2P5/VDDD2P5 at 2.7 V, the measured
+power consumption is $\approx$ 30 mW per channel with SDC powered down.  If CMOS reference is applied, VDDA2P5/VDDD2P5 can be set to 
+2.5 V to mitigate the power consumption, which is $\approx$ 26 mW per channel. The issue of raising VDDA2P5/VDDD2P5 to 2.7 V is 
+related to the instantiation of an OTA with the wrong input pair polarity (to be discussed in Section~\ref{sec:5.8}).  VDDD1P2 must 
+be raised to 2.1 V due to the lack of DC voltage level shifters between 1.2 V and 2.5 V domains (to be discussed in Section~\ref{sec:5.2}). 
+Both issues will be addressed in the next version of the ColdADC. We expect power consumption using 
+BGR or CMOS references will be roughly the same, and the overall power consumption will be lowered with the new chip.
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+%\textbf{ Temperature  } & \textbf{Value} & \textbf{Result} & \textbf{Note}  \\ \hline \hline
+\textbf{Temperature} & RT & RT & RT & LN$_2$ & LN$_2$ & LN$_2$ \\ \hline
+\textbf{Reference} & BGR & BGR & CMOS & BGR & BGR & CMOS \\ \hline
+\textbf{SDC} & enable & bypassed & bypassed & enable & bypassed & bypassed \\ \hline
+\textbf{VDDA2P5/VDDD2P5/ V} & 2.5 &2.5 &2.5 &2.5 &2.5 &2.5 \\ \hline
+\textbf{VDD1P2 / V} & 2.1 & 2.1 & 2.1 & 2.1 & 2.1 & 2.1 \\ \hline
+\textbf{VDDIO / V} & 2.25 & 2.25 & 2.25 & 2.25 & 2.25 & 2.25  \\ \hline
+\textbf{Total Power / mW} & 515 & 418 & 418 & 563 & 513 & 425 \\ \hline
+\textbf{Power per Channel / mW} & 32.2 & 26.1 & 26.1 & 35.2 & 32.1 & 26.6 \\ \hline
+\end{tabular}
+\caption{Power Consumption for ColdADC Chip\#00067}
+\label{tab:powerconsumed}
+\end{table}  
+

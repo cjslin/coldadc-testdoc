@@ -43,13 +43,33 @@ MicroBooNE, ProtoDUNE, and SBND cold electronics (see results in the Appendix fo
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.8\linewidth]{figures/noise_capacitance.png}
-  \caption{ENC vs input capacitance at LN$_2$ temperature. LArASIC is configured with a gain setting of
+  \caption{ENC vs. input capacitance at LN$_2$ temperature. LArASIC is configured with a gain setting of
 14 mV/fC, ColdADC output is trucated to 12-bit. The four curves corresponds to (from to to bottom) 0.5, 
 1.0, 2.0, and 3.0 $\mu$s shaping time.} 
   \label{fig:noise_capacitance}
 \end{figure}
 
-The DUNE ADC requirement is 12-bit. Given the low noise of the ColdADC, we explore the 
+The DUNE requirement calls for a 12-bit ADC. The nominal plan is to trucate 16-bit ColdADC output down to 
+12-bit. Given the low noise of the ColdADC, we explore the feasibility of outputing more than 12-bit.
+Earlier Figure~\ref{fig:noise_fullchain.pdf} demonstrates that when LArASIC gain is set to 7.8 mV/fc or higher, 
+the quantitization noise of 12-bit ADC is negligible. Figure~\ref{fig:noise_quant150pf} 
+shows the ENC as a function of shaping time for 16, 14, and 12 bit ADC output with input LArASIC capacitance
+of 150 pF. Figure~\ref{fig:noise_quantfloat} shows the ENC with LArASIC input floating. With the 
+current noise performance, the quantization noise is negligible at 14-bit output even with the lowest LArASIC gain setting of 4.7 mV/fC.
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=1.0\linewidth]{figures/noise_quant150pf.png}
+  \caption{ENC vs. Shaping Time at LN$_2$ temperature. Input capacitance is 150 pF. Different curves 
+correspond to gain setting of (top to bottom) 4.7, 7.8, 14, 25 mV/fC.}
+  \label{fig:noise_quant150pf}
+\end{figure}
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=1.0\linewidth]{figures/noise_quantfloat.png}
+  \caption{ENC vs. Shaping Time at LN$_2$ temperature. Input floating. Different curves correspond to 
+gain settings of (top to bottom) 4.7, 7.8, 14, 25 mV/fC.}
+  \label{fig:noise_quantfloat}
+\end{figure}
 
 
 
