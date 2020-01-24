@@ -19,6 +19,37 @@ The noise distribution for 16-channels from one ColdADC chip with the input floa
   \label{fig:qc_noisecold}
 \end{figure}
 
-
-
 \subsubsection{LArASIC + ColdADC}
+To evaluate the combined noise of LArASIC and ColdADC, 150pF mica capacitor is added to the LArASIC input 
+to simulate the capacitance of the detector sense wire. 
+Noise characterization is made at both room and LN2 temperatures, as shown in Figure~\ref{fig:noise_fullchain}.  
+The quantization noise of 12-bit ADC is negligible when LArASIC gain is set to 7.8 mV/fC or higher.
+With a shaping time $>$ 2 $\mu$s, the ENC noise is below 630 e$^-$ at RT and $<$ 500 e$^-$ at LN$_2$ temperature.
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.8\linewidth]{figures/noise_fullchain.pdf}
+  \caption{LArASIC + ColdADC (12-bit mode) noise as a function of shaping time at RT and LN$_2$ temperatures.}
+  \label{fig:noise_fullchain}
+\end{figure}
+
+The noise dependence on the input capacitance is also studied. In this setup, each input LArASIC channel has
+a different capacitor with value that ranges from 22 pF to 150 pF. The input capacitance dependence result in 
+LN$_2$ is shown in Figure~\ref{fig:noise_capacitance} . The four different curves correspond 
+to different values of LArASIC shaping time. 
+The noise performance comparison between ColdADC BGR and CMOS reference, and comparison between 
+SDC and bypassing SDC show no significant difference.
+The ENC noise performance for the LArASIC + ColdADC setup has better noise perforamnce compared to 
+MicroBooNE, ProtoDUNE, and SBND cold electronics (see results in the Appendix for more detail).
+\begin{figure}[h!]
+\centering
+  \includegraphics[width=0.8\linewidth]{figures/noise_capacitance.png}
+  \caption{ENC vs input capacitance at LN$_2$ temperature. LArASIC is configured with a gain setting of
+14 mV/fC, ColdADC output is trucated to 12-bit. The four curves corresponds to (from to to bottom) 0.5, 
+1.0, 2.0, and 3.0 $\mu$s shaping time.} 
+  \label{fig:noise_capacitance}
+\end{figure}
+
+The DUNE ADC requirement is 12-bit. Given the low noise of the ColdADC, we explore the 
+
+
+
