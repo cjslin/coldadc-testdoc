@@ -75,7 +75,7 @@ The report includes:
   \label{fig:qc_flowchart}
 \end{figure}
 
-At the moment, the test data are stored in a local database at BNL. U. of Florida group is developing an online database for the ColdADC QC test that will be used for all future production tests.
+At the moment, the test data are stored in a local database at BNL. U. of Florida group is developing an online database for the ColdADC QC test that will be used for all future production tests. A sample of the QC test report can be found at~\cite{qcreport}.
 %Ivan Furic research team from Florida University is going to develop an online database for the ColdADC QC test. BNL provides hardware, FPGA firmware, python scripts and necessary support to help them replicate the test procedure at BNL.  Florida University is responsible for QC test of 100 ColdADC chips in the coming two or three months. 
 
 \subsection{Results}
@@ -98,7 +98,7 @@ Figure~\ref{fig:qc_power}. For this configuration, the average power consumption
 \end{figure}
 
 \subsubsection{Linearity Results with 2 Ms/s/channel Sampling Rate}
-The results of the linearity and noise measurements at the nominal 2 Ms/s/channel sampling rate for the 33 chips are shown in 
+The results of the linearity and noise measurements at the nominal 2 Ms/s/channel sampling rate for the 32 chips are shown in 
 Figures~\ref{fig:qc_lin2Mwarm} (RT) and Figure~\ref{fig:qc_lin2Mcold} (LN$_2$). 
 %The degradation is allowed because it is consistent to all chips, and additional test with 500 kS/s per 
 %channel is also performed to confirm the degradation is caused by SHA/MUX crosstalk issue.  
@@ -134,7 +134,7 @@ Another caveat for the QC results is that the calibration of the ADC pipeline st
 The SHA/MUX crosstalk issue mentioned in the earlier section is expected to be fixed in the next revision of the ColdADC.
 For now we can estimate the optimized performance without the crosstalk issue by repeating the QC measurements with a slower 
 sampling rate and still pulse all 16 channels simultaneously.
-Results at a sampling rate of 0.5 Ms/s per channel are shown in Figures~\ref{fig:qc_lin500Kwarm} (RT) and Figure~\ref{fig:qc_lin500Kcold} (LN$_2$). 
+Results at the sampling rate of 0.5 Ms/s per channel are shown in Figures~\ref{fig:qc_lin500Kwarm} (RT) and Figure~\ref{fig:qc_lin500Kcold} (LN$_2$). 
 %To predict the possible optimized performance of revision (if the SHA/MUX crosstalk issue is fixed), the QC test for each chip is conducted with ColdADC working at 500 kS/s per channel as well, as shown in Figure 8 is the result at room temperature and Figure 9 is the result at cryogenic temperature. 
 Compared to the result of 2MS/s per channel, the linearity is significantly better. Average of the worst INL/DNL is less than 1 LSB.
 Average of ENOB is nearly 11 bits at LN$_2$.  DC noise at room temperature is improved but no significant difference is observed at LN$_2$.

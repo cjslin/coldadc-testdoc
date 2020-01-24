@@ -26,7 +26,7 @@ Figure~\ref{fig:linearity_sha_current} shows the linearity of ADC measured by lo
   \label{fig:linearity_sha_current}
 \end{figure}
 
-In the next study, we reduced the sampling speed of the ADC. With reduced sampling speed the MUX's will have more time to settle and be less senstive to kickback effect, if any. Figure~\ref{fig:linearity_mux_speed} shows the overall linearity at different sampling clocks. Reducing the sampling frequency improves the linearity significantly. Based on the results of the studies, the MUX's seem to be causing the non-linearity and kickback is likely the main source of the problem. To address this issue we plan to redesign the MUX to be much faster.
+In the next study, we reduced the sampling speed of the ADC. With reduced sampling speed the MUX's will have more time to settle and be less senstive to kickback effect, if any. Figure~\ref{fig:linearity_mux_speed} shows the overall linearity at different sampling clocks. Reducing the sampling frequency improves the linearity significantly. Based on the results of the studies, the MUX's seem to be causing the non-linearity and kickback is likely the main source of the problem. To address this issue we plan to redesign the MUX to be faster.
 \begin{figure}[h!]
 \centering
   \includegraphics[width=1.0\linewidth]{figures/prakash_fig/linearity_mux_speed.png}
