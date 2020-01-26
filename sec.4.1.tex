@@ -14,20 +14,20 @@ The noise distribution for 16-channels from one ColdADC chip with the input floa
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.8\linewidth]{figures/qc_noisewarm.png}
-  \caption{Noise distribution (16-bit) of 16 input channels at room temperature.}
+  \caption{Noise distributions (16-bit ADC counts) of 16 input channels at room temperature.}
   \label{fig:qc_noisewarm}
 \end{figure}
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.8\linewidth]{figures/qc_noisecold.png}
-  \caption{Noise distribution (16-bit) of 16 input channels at LN$_2$ temperature.}
+  \caption{Noise distribution (16-bit ADC counts) of 16 input channels at LN$_2$ temperature.}
   \label{fig:qc_noisecold}
 \end{figure}
 
 \subsubsection{LArASIC + ColdADC}
-To evaluate the combined noise of LArASIC and ColdADC, 150pF mica capacitor is added to the LArASIC input 
-to simulate the capacitance of the detector sense wire. 
-Noise characterization is made at both room and LN2 temperatures, as shown in Figure~\ref{fig:noise_fullchain}.  
+To evaluate the combined noise of LArASIC and ColdADC, input capacitors (150 pF mica) were added to the LArASIC 
+inputs to simulate the capacitance of the TPC sense wires. Noise measurements were made at both room and LN2 
+temperatures, as shown in Figure~\ref{fig:noise_fullchain}.  
 The quantization noise of 12-bit ADC is negligible when LArASIC gain is set to 7.8 mV/fC or higher.
 With a shaping time $>$ 2 $\mu$s, the ENC noise is below 630 e$^-$ at RT and $<$ 500 e$^-$ at LN$_2$ temperature.
 \begin{figure}[h!]
