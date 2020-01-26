@@ -88,8 +88,8 @@ functionality tests. Based on a sample of 53 chips (51 packaged and 2 bare dies)
 
 \subsubsection{Power Consumption}
 The power consumption of ColdADC strongly depends on the chip configuration. The power consumption with VDDA2P5/VDDD2P5=2.5V, 
-VDDD1P2=2.1V, VDDIO=2.25V, SDC\&DB bypassed, CMOS reference, floating single-end input, and 2 MS/s sampling rate is summarized in in 
-Figure~\ref{fig:qc_power}. For this configuration, the average power consumption of ColdADC is about 413 mW at room and 450 mW at LN$_2$ temperature.
+VDDD1P2=2.1V, VDDIO=2.25V, SDC\&DB bypassed, CMOS reference, floating single-end input, and 2 MS/s sampling rate is summarized in 
+Figure~\ref{fig:qc_power}. For this configuration, the average total power consumption of ColdADC is about 413 mW at room and 450 mW at LN$_2$ temperature.
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.85\linewidth]{figures/qc_power.png}
@@ -106,15 +106,14 @@ Figures~\ref{fig:qc_lin2Mwarm} (RT) and Figure~\ref{fig:qc_lin2Mcold} (LN$_2$).
 %DUNE experiment, ColdADC is truncated down to 12-bit by cut-off the lowest 4 bits. Meanwhile, in order to get ENOB, the coherency 
 %frequency of sine wave is calculated for 12-bit ADC followed the equation of IEEE standard. 
 Overall, the ColdADC performance is reasonably good, average of the worst DNL is 0.76 LSB, average of the worst INL is 2.6 LSB, 
-average of ENOB is 10.0 bit and average of DC noise at 900mV is 0.68vLSB. In addition, the spread of these 4 key parameters 
+average of ENOB is 10.0 bit and average of DC noise at 900mV is 0.68 LSB. In addition, the spread of these 4 key parameters 
 among channels (or chips) is small.
-Cryogenic test is performed as well with the same configuration,  Figure 7 shows the statistical result. 
-By comparing Figure 6 and Figure 7, the linearity  performance of DNL, INL and ENOB do not show significant temperature dependence
- but the DC noise at LN$_2$ is smaller than at RT due to the suppression of thermal noise at cryogenic temperature.  
+By comparing Figure~\ref{fig:qc_lin2Mwarm} and Figure~\ref{fig:qc_lin2Mcold}, the linearity  performance of DNL, INL and ENOB 
+do not show significant temperature dependence but the DC noise at LN$_2$ is smaller than at RT due to the suppression of 
+thermal noise at cryogenic temperature.  
 The linearity results shown here are slightly worse than the ones shown in Section~\ref{sec:4} due to the known SHA/MUX crosstalk issue.
 For the QC tests, all 16 input channels are simultaneously connected to the signal source.
 %Another caveat for the QC results is that the calibration of the ADC pipeline stages are not done to shorten the testing cycle time.
-
 \begin{figure}[h!]
 \centering
   \includegraphics[width=0.85\linewidth]{figures/qc_lin2Mwarm.png}

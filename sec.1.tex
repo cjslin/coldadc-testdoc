@@ -1,6 +1,6 @@
 \label{sec:1}
 
-The DUNE ColdADC is a digitizer ASIC intended for operation in the Deep Underground Neutrino Experiment (DUNE) Far Detectors~\cite{dunecdr}. It will operated immersed in Liquid Argon (LAr) and will need to operate reliably, without any servicing or component replacement, for over 30 years at a temperature of 88 K.
+The DUNE ColdADC is a digitizer ASIC intended for operation in the Deep Underground Neutrino Experiment (DUNE) Far Detectors~\cite{dunecdr}. It will be immersed in Liquid Argon (LAr) and need to operate reliably, without any servicing or component replacement, for over 30 years at a temperature of 88 K.
 
 The ColdADC was implemented in 65 nm CMOS by a team comprised of engineers from Fermilab (FNAL), Brookhaven National Laboratory (BNL), and Lawrence Berkeley National Laboratory (LBNL). The block diagram of the ColdADC is shown in Figure~\ref{fig:coldadc_blockdiagram}.
 Each ColdADC has 16 input channels that can either be single-ended or fully differential. The input signals go though a buffer block followed by a Sample-and-Hold (SHA) circuit. The buffer block contains a Single-to-Differential Converter (SDC) and a Differential Buffer (DB). The analog samples after the SHA are multiplexed by a MUX and then digitized by one of two piplined ADCs.
