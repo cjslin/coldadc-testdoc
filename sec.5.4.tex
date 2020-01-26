@@ -5,7 +5,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The input signals are sampled at a rate of 2 MS/s, multiplexed by 8 and digitized by one of two calibrated 12-bit pipelined ADCs operating at 16 MS/s. The overall integral non-linearity of the ADC is due to the integral non-linearity of the front-end (SDC), SHA, MUX as well as the ADC transfer function. Programming the ColdADC in ADC only mode, frozen SHA mode and free running SHA mode, we were able to measure linearity for ADC only, ADC $+$ SHA and ADC $+$ SHA $+$ MUX configurations. 
-%The linearity of the ADC is approximately reduced by 0.3 LSB when SHA is in free running mode, i.e ADC $+$ SHA $+$ MUX. We did not observe any noticeable degradation of linearity between ADC only and frozen SHA mode. However, 
+The frozen SHA mode is a configuration whereby a single input channel is continually connected to the Pipelined ADC. In free-running SHA mode, every 500ns a different input channel is connected to the Pipedlined ADC (i.e. the nominal operation mode).
 
 In the frozen SHA mode (ADC $+$ SHA) we observed the overall linearity is slightly different for different sample sets. In this mode, the ADC will oversample the SHA output by a factor of 8 and the linearity of the ADC can be calculated by taking any of the samples. Figure \ref{fig:sha_sample_hist} shows that the samples are not consistent and non-linearity has been introduced by SHA/MUX combination. The main source of non-linearity could be SHA op-amps or the MUX.
 %Studies were performed at two configuration settings, forzen SHA mode and free running SHA mode. Nominal operation is free running SHA mode. 
